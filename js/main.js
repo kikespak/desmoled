@@ -19,3 +19,12 @@ $(window).scroll(function () {
            $("#circlecontainer").css('margin', '-' + (fromTop / 3) + 'px 0px 0px 0px');
 
        });
+
+function myInit(
+window.number=0;
+    setInterval(slide(),10000)
+)
+function slide(){
+    window.number=number+1
+    document.getElementById('vetrina').style.backgroundImage="url('../img/"+number+".jpg')";
+}
