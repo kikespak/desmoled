@@ -26,5 +26,5 @@ function myInit(){
 function slide(){
     number=number+1
     document.getElementById('vetrina').style.backgroundImage="url('img/"+number+".jpg')";
-    if(number==3){number=0;}
+    if(number==5){number=0;}
 }
