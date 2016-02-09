@@ -3,7 +3,7 @@ $(window).scroll(function () {
            var fromTop = $(window).scrollTop();console.log('done is '+done)
            var scrollPercentage = 100 * $(window).scrollTop() / ($('#circlecontainer').height() - $(window).height());
            console.log(scrollPercentage);
-    if(scrollPercentage<=-271){$('#footer').addClass("show");}else{$('#footer').removeClass("show");}
+    if(scrollPercentage<=-261){$('#footer').addClass("show");}else{$('#footer').removeClass("show");}
            if (scrollPercentage <= -71.3) {
                document.getElementById('blackheader').setAttribute('style','height:87px;border-bottom:5vw solid transparent;border-left:100vw solid #1a1a1a');
                if(done==0){document.getElementById('header').setAttribute('style', 'opacity:0;margin-top:-30px')}
