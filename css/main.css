@@ -172,7 +172,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#001a1a1a', e
 
 #infographic {
     margin-top:200px;
-    
+    font-family:'open sans';
     width:80%;
 }
 
