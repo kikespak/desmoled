@@ -1,0 +1,247 @@
+
+body.vertical #header {
+    height: 80px;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index:1;
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#041414+0,091111+36,091111+100&0.68+0,0.12+69,1+100,0+100,0+100 */
+background: -moz-linear-gradient(top,  rgba(4,20,20,0.68) 0%, rgba(9,17,17,0.39) 36%, rgba(9,17,17,0.12) 69%, rgba(9,17,17,0) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  rgba(4,20,20,0.68) 0%,rgba(9,17,17,0.39) 36%,rgba(9,17,17,0.12) 69%,rgba(9,17,17,0) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  rgba(4,20,20,0.68) 0%,rgba(9,17,17,0.39) 36%,rgba(9,17,17,0.12) 69%,rgba(9,17,17,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ad041414', endColorstr='#00091111',GradientType=0 ); /* IE6-9 */
+
+
+}
+
+body {
+    margin: 0;
+    background-color: #fff;
+    overflow-x: hidden;
+    font-family: 'open sans'
+}
+
+body.vertical #vetrina {
+    width: 100%;
+    height: 50vh;
+    background-image: url("../img/1.jpg");
+    background-size: 100%;
+    background-position: 20% 20%
+}
+
+body.vertical #spacer {
+    width: 0;
+    height: 0;
+    border-bottom: 10vw solid white;
+    border-left: 100vw solid transparent;
+    margin-top: -136px;
+    
+}
+
+body.vertical #container {
+    background-color: white;
+    text-align:center;
+    margin-bottom:20vw;
+    position:relative;
+}
+
+body.vertical #footer {
+    width: 100%;
+    height: 40vw;
+    z-index:300;
+    bottom: 0;
+    overflow:none;
+   -moz-transition:all 0.5s ease-in-out;
+   -o-transition:all 0.5s ease-in-out;
+   transition:all 0.5s ease-in-out;
+   -webkit-transition:all 0.5s ease-in-out;
+    background-color: #1a1a1a;
+    text-align:center;
+    
+}
+body.vertical #footer.show
+{
+    height: 200px;
+
+   -moz-transition:all 0.5s ease-in-out;
+   -o-transition:all 0.5s ease-in-out;
+   transition:all 0.5s ease-in-out;
+   -webkit-transition:all 0.5s ease-in-out;
+}
+
+body.vertical .cutfoot {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-top: 50px solid transparent;
+    border-left: 100vw solid transparent;
+    
+}
+
+body.vertical #circlecontainer {
+    background-color: transparent;
+    width: 13%;
+    height:0;
+    padding-bottom:13%;
+    position: absolute;
+    top:67%;
+    display:flex;
+    right:10%;
+        flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-content: space-between
+}
+
+body.vertical .circle {
+    width: 20%;
+    height: 0;
+    padding-bottom: 20%;
+    background-color: white;
+    border-radius: 200px;
+    margin:2.5%;
+
+    
+}
+
+body.vertical .logocontainer {
+    width:0;
+    height: 80px;
+    background-color: transparent;
+    display: inline-block;
+    
+}
+
+body.vertical .navcontainer {
+    display:none;
+}
+
+a {
+    text-decoration: none;
+    color:black;
+}
+
+body.vertical .nav {
+    height:80px;
+    line-height: 80px;
+    color: white;
+}
+
+body.vertical .flexcontainer {
+    width:80%;
+    height:80px;
+    background-color:transparent;
+    position:absolute;
+    display:flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+}
+
+body.vertical .logo {
+    height: 80px;
+    float: right;
+    margin-right: 170px;
+}
+
+body.vertical #blackheader {
+    transition:all 500ms ease;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0;
+}
+
+body.vertical .layer {
+    height:100%;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#1a1a1a+0,1a1a1a+91&0+61,0.44+73,0.75+80,1+89 */
+background: -moz-linear-gradient(top,  rgba(26,26,26,0) 0%, rgba(26,26,26,0) 61%, rgba(26,26,26,0.44) 73%, rgba(26,26,26,0.75) 80%, rgba(26,26,26,1) 89%, rgba(26,26,26,1) 91%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  rgba(26,26,26,0) 0%,rgba(26,26,26,0) 61%,rgba(26,26,26,0.44) 73%,rgba(26,26,26,0.75) 80%,rgba(26,26,26,1) 89%,rgba(26,26,26,1) 91%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  rgba(26,26,26,0) 0%,rgba(26,26,26,0) 61%,rgba(26,26,26,0.44) 73%,rgba(26,26,26,0.75) 80%,rgba(26,26,26,1) 89%,rgba(26,26,26,1) 91%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#001a1a1a', endColorstr='#1a1a1a',GradientType=0 ); /* IE6-9 */
+
+}
+
+body.vertical #infographic {
+    font-family:'open sans';
+    width:100%;
+    margin:60px !important;
+    display:none;
+}
+
+body.vertical .footinfo {
+    width:23%;
+    height:100%;
+    display:inline-block;
+    background-color:#2a2a2a;
+}
+::-webkit-scrollbar {
+background: transparent;
+	overflow: visible;
+	width: 10px;
+}
+::-webkit-scrollbar-thumb {
+	background-color: #c43b42;
+	/*border: solid #e6e6e6;*/
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: #c43b42;
+}
+
+::-webkit-scrollbar-thumb:vertical {
+	border-width: 4px 6px;
+	min-width: 40px;
+}
+
+::-webkit-scrollbar-thumb:vertical {
+	border-width: 6px 4px;
+	min-height: 40px;
+}
+
+::-webkit-scrollbar-track-piece {
+	background-color: #e6e6e6;
+}
+
+::-webkit-scrollbar-corner {
+	background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: #c43b42;
+	-webkit-box-shadow: inset 1px 1px 0 rgba(0,0,0,0.10),inset 0 -1px 0 rgba(0,0,0,0.07);
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background-color: #999;
+}
+body.vertical .ham {
+    transition:all 400ms ease;
+    height:60px;
+}
+body.vertical #logcont:hover>.ham{
+    transform: skew(25deg) rotate(-39deg) scale(0.8);
+    transform-origin:50% 50%;
+    cursor:pointer;
+}
+
+
+
+body.vertical #logcont {
+    float:right;
+    width:50%;
+}
+
+body.vertical #whitelayer {
+    position:absolute;
+    width:100%;
+    height:50%;
+    background-color:white;
+}
+
+body.vertical .mission {
+    width:100%;
+}

@@ -1,4 +1,24 @@
-    var done=0;  
+
+window.number=0;
+function myInit(){
+    setInterval(slide,10000)
+}
+function slide(){
+    number=number+1
+    document.getElementById('vetrina').style.backgroundImage="url('img/"+number+".jpg')";
+    if(number==5){number=0;}
+}
+function checkMobile(){
+	var w = window.innerWidth;
+   var h = window.innerHeight;
+    var b=document.body;
+	if(w<h){b.classList.remove('horizontal');b.classList.add('vertical')}else{b.classList.remove('vertical');b.classList.add('horizontal')}
+}
+function checkInit(){
+    var w = window.innerWidth;
+   var h = window.innerHeight;
+	if(w>=h){
+	        var done=0;  
 $(window).scroll(function () {
            var fromTop = $(window).scrollTop();console.log('done is '+done)
            var scrollPercentage = 100 * $(window).scrollTop() / ($('#circlecontainer').height() - $(window).height());
@@ -20,12 +40,5 @@ $(window).scroll(function () {
     $("#container").css('margin',   (fromTop / 2) + 'px 0px 0px 0px');
 
        });
-window.number=0;
-function myInit(){
-    setInterval(slide,10000)
-}
-function slide(){
-    number=number+1
-    document.getElementById('vetrina').style.backgroundImage="url('img/"+number+".jpg')";
-    if(number==5){number=0;}
+	}
 }
