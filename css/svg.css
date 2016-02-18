@@ -72,7 +72,7 @@
 #XMLID_3_ ,
 #XMLID_272_ {
 }
-#XMLID_243_:hover>#efficienza {
+#dissipatore:hover>#XMLID_243_>#efficienza {
 	transform: rotateX(360deg);
 	-moz-transform: rotateX(360deg);
 	-ms-transform: rotateX(360deg);
@@ -87,9 +87,12 @@ text {
 	cursor: pointer;
 	opacity: 0.9;
 }
+#dissipatore:hover>#disstext{
+    opacity:1;
+}
 #mano:hover {
 	cursor: pointer;
-	opacity: 0.5;
+	opacity: 0.9;
 }
 #XMLID_250_:hover {
 	opacity: 0.5;
@@ -98,7 +101,10 @@ text {
 }
 #bandiera:hover {
 	cursor: pointer;
-	opacity: 0.5;
+	opacity: 0.9;
+}
+#bandiera:hover>#bandtext{
+    opacity:1;
 }
 .elm-svg ,
 #XMLID_250_ {
@@ -144,3 +150,118 @@ text {
 	-webkit-transform: rotateX(360deg);
 }
 
+
+#disstext {
+    opacity:0;
+    transition:all 200ms ease;
+}
+
+#manotext {
+    transition:all 200ms ease;
+    opacity:0;
+}
+#mano:hover>#manotext{
+    opacity:1
+}
+/*
+#XMLID_271_ {
+    animation: flagan ease-in 2s;
+  animation-iteration-count: 5;
+  transform-origin: 50% 50%;
+  -webkit-animation: flagan ease-in 2s;
+  -webkit-animation-iteration-count: 5;
+  -webkit-transform-origin: 50% 50%;
+  -moz-animation: flagan ease-in 2s;
+  -moz-animation-iteration-count: 5;
+  -moz-transform-origin: 50% 50%;
+  -o-animation: flagan ease-in 2s;
+  -o-animation-iteration-count: 5;
+  -o-transform-origin: 50% 50%;
+  -ms-animation: flagan ease-in 2s;
+  -ms-animation-iteration-count: 5;
+  -ms-transform-origin: 50% 50%;
+}
+
+#XMLID_270_ {
+    animation: flagan ease-in 2s;
+  animation-iteration-count: infinite;
+  transform-origin: 50% 50%;
+  -webkit-animation: flagan ease-in 2s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-transform-origin: 50% 50%;
+  -moz-animation: flagan ease-in 2s;
+  -moz-animation-iteration-count: infinite;
+  -moz-transform-origin: 50% 50%;
+  -o-animation: flagan ease-in 2s;
+  -o-animation-iteration-count: infinite;
+  -o-transform-origin: 50% 50%;
+  -ms-animation: flagan ease-in 2s;
+  -ms-animation-iteration-count: infinite;
+  -ms-transform-origin: 50% 50%;
+}
+
+
+@keyframes flagan{
+  0% {
+    transform:  skewX(-5deg) ;
+  }
+  50% {
+    transform:  skewX(5deg) ;
+  }
+    100%{
+        transform: skewX(-5deg);
+    }
+}
+
+@-moz-keyframes flagan{
+  0% {
+    -moz-transform:  skewX(-5deg) ;
+  }
+  50% {
+    -moz-transform:  skewX(5deg) ;
+  }
+    100%{
+        -moztransform: skewX(-5deg);
+    }
+}
+
+@-webkit-keyframes flagan {
+  0% {
+    -webkit-transform:  skewX(-5deg) ;
+  }
+  50% {
+    -webkit-transform:  skewX(5deg) ;
+  }
+    100%{
+        -webkit-transform: skewX(-5deg);
+    }
+}
+
+@-o-keyframes flagan {
+  0% {
+    -o-transform:  skewX(-5deg) ;
+  }
+  50% {
+    -o-transform:  skewX(5deg) ;
+  }
+    100%{
+        -o-transform: skewX(-5deg);
+    }
+}
+
+@-ms-keyframes flagan {
+  0% {
+    -ms-transform:  skewX(-5deg) ;
+  }
+  50% {
+    -ms-transform:  skewX(5deg) ;
+  }
+    100%{
+        -ms-transform: skewX(-5deg);
+    }
+}*/
+
+#bandtext {
+    opacity:0;
+    transition:all 200ms ease;
+}
