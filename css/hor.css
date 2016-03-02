@@ -5,7 +5,7 @@ body.horizontal #header {
     position: absolute;
     top: 0;
     left: 0;
-    z-index:1;
+    z-index:101;
 /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#041414+0,091111+36,091111+100&0.68+0,0.12+69,1+100,0+100,0+100 */
 background: -moz-linear-gradient(top,  rgba(4,20,20,0.68) 0%, rgba(9,17,17,0.39) 36%, rgba(9,17,17,0.12) 69%, rgba(9,17,17,0) 100%); /* FF3.6-15 */
 background: -webkit-linear-gradient(top,  rgba(4,20,20,0.68) 0%,rgba(9,17,17,0.39) 36%,rgba(9,17,17,0.12) 69%,rgba(9,17,17,0) 100%); /* Chrome10-25,Safari5.1-6 */
@@ -35,14 +35,13 @@ body.horizontal #spacer {
     height: 0;
     border-bottom: 10vw solid white;
     border-left: 100vw solid transparent;
-    margin-top: -136px;
+    margin-top: -193px;
     
 }
 
 body.horizontal #container {
     background-color: white;
     text-align:center;
-    margin-bottom:20vw;
     position:relative;
 }
 
@@ -157,6 +156,7 @@ body.horizontal #blackheader {
     top: 0;
     left: 0;
     width: 0;
+    z-index:100;
 }
 
 body.horizontal .layer {
@@ -248,4 +248,11 @@ body.horizontal #whitelayer {
     width:100%;
     height:50%;
     background-color:white;
+}
+
+#subcontainer {
+    background-color: white;
+    text-align:center;
+    width:100%;
+    position:relative;
 }

@@ -24,7 +24,7 @@ $(window).scroll(function () {
            var scrollPercentage = 100 * $(window).scrollTop() / ($('#circlecontainer').height() - $(window).height());
            console.log(scrollPercentage);
            if (scrollPercentage <= -71.3) {
-               document.getElementById('blackheader').setAttribute('style','height:55px;border-bottom:4vw solid transparent;border-left:100vw solid #1a1a1a');
+               document.getElementById('blackheader').setAttribute('style','height:81px;border-bottom:0vw solid transparent;border-left:100vw solid #1a1a1a');
                if(done==0){document.getElementById('header').setAttribute('style', 'opacity:0;margin-top:-30px')}
                if (scrollPercentage <= -72.3) {done=1
                    if(done==1){ document.getElementById('header').setAttribute('style', 'opacity:1;margin-top:23px;background:transparent;    transform: translate(-195px,-22px);');}
@@ -37,7 +37,8 @@ $(window).scroll(function () {
                document.getElementById('blackheader').setAttribute('style','height:0px;border-bottom:0vw solid transparent;border-left:100vw solid #1a1a1a');
            }
            $("#circlecontainer").css('margin', '-' + (fromTop/3) + 'px 0px 0px 0px');
-    $("#container").css('margin',   (fromTop / 2) + 'px 0px 0px 0px');
+    //$("#container").css('margin',   (fromTop / 2) + 'px 0px 0px 0px');
+    $("#subcontainer").css('height',   (fromTop / 2) + 'px');
 
        });
 	}
