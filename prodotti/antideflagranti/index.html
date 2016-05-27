@@ -7,6 +7,7 @@
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
 		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+		<script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
 		<script>
   // Initialize Firebase
   var config = {
@@ -26,56 +27,60 @@
         var count = 0;
 for (var k in myJson.sectdefl) {
     if (myJson.sectdefl.hasOwnProperty(k)) {
-       ++count;
-    }
-}
-        for(var i=0;i<count.length;i++){
+       ++count;var myFam=myJson.sectdefl['famiglia'+count+'sectdefl'];
+    
+            console.log('a2')
             var s=document.createElement('section');
             s.setAttribute('class','4u 12u$(small) fam');
-            s.setAttribute('id','fam'+(i+1));
+            s.setAttribute('id','fam'+count);
             s.setAttribute('onclick','myToggle(this.id)');
             var d=document.createElement('div');
             d.setAttribute('class','famiglia-section famsect-deflagranti');
-            var num='famiglia'+(i+1)+'sectdefl';
-            d.innerHTML=myJson.sectdefl.num.famigliatitle;
-            s.appendChild(d);
+            d.innerHTML=myFam.famigliatitle;console.log('a3')
+            s.appendChild(d);console.log('a3')
             document.getElementById('target-family').appendChild(s);
             var r=document.createElement('div');
             r.setAttribute('class','row');
-            r.setAttribute('id','targetpdf'+(i+1));
+            r.setAttribute('id','targetpdf'+count+'');
             r.setAttribute('style','margin:0px 10px -1px -1em');
             var f=document.createElement('section');
             f.setAttribute('class','12u 12u$(small) back-fam');
-            f.setAttribute('onclick="myToggle("fam'+(i+1)+'")');
-            f.innerHTML="Indietro";
-            r.appendChild(f);
-            document.getElementById('targetpdf').appendChild(r);
+            f.setAttribute('onclick','myToggle("fam'+count+'")');
+            f.innerHTML="Indietro";console.log('a3')
+            r.appendChild(f);console.log('a3')
+            
+        var c=document.createElement('section');
+        c.setAttribute('id','fam'+count+'-cont');
+        c.setAttribute('onclick','myToggle("fam'+count+')"');
+        c.setAttribute('class','12u 12u$(small) fam-cont hidden');
+        c.appendChild(r);
+        document.getElementById('targetpdf').appendChild(c);
                 var countt = 0;
-for (var k in myJson.sectdefl.num) {
-    if (myJson.sectdefl.num.hasOwnProperty(k)) {
-       ++countt;
-    }
-}
-            for(var z=0;z<countt.length;z++){
+for (var kk in myFam) {console.log('a4')
+    if (myFam.hasOwnProperty(kk)) {
+       ++countt;var myPdf=myJson.sectdefl['famiglia'+count+'sectdefl']['pdf'+countt];
+        if(myPdf){
+    console.log('a5')
                 var ss=document.createElement('section');
                 ss.setAttribute('class','3u 6u$(small)');
-                var dd=document.createElement('div');
+                var dd=document.createElement('a');
                 dd.setAttribute('class','button-fam');
-                var numpdf="pdf"+(z+1)+"";
-                dd.innerHTML=myJson.sectdefl.num.numpdf.pdfname;
-                dd.setAttribute('href',myJson.sectdefl.num.numpdf.pdflink)
+                //var numpdf=myPdf;
+        console.log(myPdf)
+                dd.innerHTML=myPdf.pdfname;
+               dd.setAttribute('href',myPdf.pdflink)
                 dd.setAttribute('target','_blank');
                 var im=document.createElement('img');
                 im.setAttribute('class','pdf-icon');
                 im.setAttribute('src','../../images/pdf.png');
                 dd.appendChild(im);
-                ss.appendChild(dd);
-                document.getElementById('targetpdf').appendChild(ss)
+                ss.appendChild(dd);console.log('a6')
+                r.appendChild(ss)}
             }
         }
-       
+       console.log('a7')
         
-    }
+    }}}
 </script>
 		<script src="../../js/jquery.min.js"></script>
 		<script src="../../js/skel.min.js"></script>
@@ -105,54 +110,9 @@ for (var k in myJson.sectdefl.num) {
 				<h2 style="color:white;font-weight:bold;">Illuminazione antideflagranti</h2>
 				<p></p>
 			</section>
-			<section id="one" class="wrapper style1 align-center"><div class="container" id="main"><div class="row 200% align-center" id="target-families">
-             <section class="4u 12u$(small) fam" id="fam1" onclick="myToggle(this.id)"><div class="famiglia-section famsect-deflagranti">Famiglia 1</div></section>
-             <section class="4u 12u$(small) fam" id="fam2" onclick="myToggle(this.id)"><div class="famiglia-section famsect-deflagranti">Famiglia 1</div></section>
-             <section class="4u 12u$(small) fam" id="fam3" onclick="myToggle(this.id)"><div class="famiglia-section famsect-deflagranti">Famiglia 1</div></section>
+			<section id="one" class="wrapper style1 align-center"><div class="container" id="main"><div class="row 200% align-center" id="target-family">
 			</div></div>
 			<div id="targetpdf"></div>
-			
-			<section id="fam1-cont" onclick="myToggle('fam1')" class="12u 12u$(small) fam-cont hidden">
-            <div class="row" style="    margin: 0px 10px -1px -1em;"><section class="12u 12u$(small) back-fam"  onclick="myToggle('fam2')">Indietro</section>
-			    <section class="3u 6u$(small)"><div class="button-fam">Codice<img class="pdf-icon" src="../../images/pdf.png"/></div></section>
-			    <section class="3u 6u$(small)"><div class="button-fam">Codice<img class="pdf-icon" src="../../images/pdf.png"/></div></section>
-			    <section class="3u 6u$(small)"><div class="button-fam">Codice<img class="pdf-icon" src="../../images/pdf.png"/></div></section>
-			    <section class="3u 6u$(small)"><div class="button-fam">Codice<img class="pdf-icon" src="../../images/pdf.png"/></div></section>
-			    <section class="3u 6u$(small)"><div class="button-fam">Codice<img class="pdf-icon" src="../../images/pdf.png"/></div></section>
-			    <section class="3u 6u$(small)"><div class="button-fam">Codice<img class="pdf-icon" src="../../images/pdf.png"/></div></section>
-			    <section class="3u 6u$(small)"><div class="button-fam">Codice<img class="pdf-icon" src="../../images/pdf.png"/></div></section>
-			    <section class="3u 6u$(small)"><div class="button-fam">Codice<img class="pdf-icon" src="../../images/pdf.png"/></div></section>
-			    <section class="3u 6u$(small)"><div class="button-fam">Codice<img class="pdf-icon" src="../../images/pdf.png"/></div></section>
-			    <section class="3u 6u$(small)"><div class="button-fam">Codice<img class="pdf-icon" src="../../images/pdf.png"/></div></section>
-			    <section class="3u 6u$(small)"><div class="button-fam">Codice<img class="pdf-icon" src="../../images/pdf.png"/></div></section>
-			    <section class="3u 6u$(small)"><div class="button-fam">Codice<img class="pdf-icon" src="../../images/pdf.png"/></div></section></div>
-			</section>
-			<section id="fam2-cont" class="12u 12u$(small) fam-cont hidden"><div class="row" style="    margin: 0px 10px -1px -1em;"><section class="12u 12u$(small) back-fam"  onclick="myToggle('fam2')">Indietro</section>
-			    <section class="3u 6u$(small)"><div class="button-fam">Codice<img class="pdf-icon" src="../../images/pdf.png"/></div></section>
-			    <section class="3u 6u$(small)"><div class="button-fam">Codice<img class="pdf-icon" src="../../images/pdf.png"/></div></section>
-			    <section class="3u 6u$(small)"><div class="button-fam">Codice<img class="pdf-icon" src="../../images/pdf.png"/></div></section>
-			    <section class="3u 6u$(small)"><div class="button-fam">Codice<img class="pdf-icon" src="../../images/pdf.png"/></div></section>
-			    <section class="3u 6u$(small)"><div class="button-fam">Codice<img class="pdf-icon" src="../../images/pdf.png"/></div></section>
-			    <section class="3u 6u$(small)"><div class="button-fam">Codice<img class="pdf-icon" src="../../images/pdf.png"/></div></section>
-			    <section class="3u 6u$(small)"><div class="button-fam">Codice<img class="pdf-icon" src="../../images/pdf.png"/></div></section>
-			    <section class="3u 6u$(small)"><div class="button-fam">Codice<img class="pdf-icon" src="../../images/pdf.png"/></div></section>
-			    <section class="3u 6u$(small)"><div class="button-fam">Codice<img class="pdf-icon" src="../../images/pdf.png"/></div></section>
-			    <section class="3u 6u$(small)"><div class="button-fam">Codice<img class="pdf-icon" src="../../images/pdf.png"/></div></section>
-			    <section class="3u 6u$(small)"><div class="button-fam">Codice<img class="pdf-icon" src="../../images/pdf.png"/></div></section>
-			    <section class="3u 6u$(small)"><div class="button-fam">Codice<img class="pdf-icon" src="../../images/pdf.png"/></div></section></div></section>
-			<section id="fam3-cont" onclick="myToggle('fam3')" class="12u 12u$(small) fam-cont hidden"><div class="row" style="    margin: 0px 10px -1px -1em;"><section class="12u 12u$(small) back-fam"  onclick="myToggle('fam2')">Indietro</section>
-			    <section class="3u 6u$(small)"><div class="button-fam">Codice<img class="pdf-icon" src="../../images/pdf.png"/></div></section>
-			    <section class="3u 6u$(small)"><div class="button-fam">Codice<img class="pdf-icon" src="../../images/pdf.png"/></div></section>
-			    <section class="3u 6u$(small)"><div class="button-fam">Codice<img class="pdf-icon" src="../../images/pdf.png"/></div></section>
-			    <section class="3u 6u$(small)"><div class="button-fam">Codice<img class="pdf-icon" src="../../images/pdf.png"/></div></section>
-			    <section class="3u 6u$(small)"><div class="button-fam">Codice<img class="pdf-icon" src="../../images/pdf.png"/></div></section>
-			    <section class="3u 6u$(small)"><div class="button-fam">Codice<img class="pdf-icon" src="../../images/pdf.png"/></div></section>
-			    <section class="3u 6u$(small)"><div class="button-fam">Codice<img class="pdf-icon" src="../../images/pdf.png"/></div></section>
-			    <section class="3u 6u$(small)"><div class="button-fam">Codice<img class="pdf-icon" src="../../images/pdf.png"/></div></section>
-			    <section class="3u 6u$(small)"><div class="button-fam">Codice<img class="pdf-icon" src="../../images/pdf.png"/></div></section>
-			    <section class="3u 6u$(small)"><div class="button-fam">Codice<img class="pdf-icon" src="../../images/pdf.png"/></div></section>
-			    <section class="3u 6u$(small)"><div class="button-fam">Codice<img class="pdf-icon" src="../../images/pdf.png"/></div></section>
-			    <section class="3u 6u$(small)"><div class="button-fam">Codice<img class="pdf-icon" src="../../images/pdf.png"/></div></section></div></section>
 			</section>
 			<script>
 			    function myToggle(eid){

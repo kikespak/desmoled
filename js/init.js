@@ -1,10 +1,10 @@
 var notyet=true;var stillfade=true;var stillfadee=true;var stillfadeee=true;
 
-function checkVisible(elm) {
-  var rect = elm.getBoundingClientRect();
-  var viewHeight = Math.max(document.documentElement.clientHeight, window.innerHeight);
-  return !(rect.bottom < 0 || rect.top - viewHeight >= 0);
-}
+//function checkVisible(elm) {
+//  var rect = elm.getBoundingClientRect();
+//  var viewHeight = Math.max(document.documentElement.clientHeight, window.innerHeight);
+//  return !(rect.bottom < 0 || rect.top - viewHeight >= 0);
+//}
 $(window).scroll(function () {
     var defl=document.getElementById('ef-defl');
     var indu=document.getElementById('ef-indu');
