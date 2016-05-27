@@ -1282,6 +1282,7 @@ a {
 }
 .elmnav{
     transition:all 200ms ease;
+    
 }
 
 #two {
@@ -1441,3 +1442,107 @@ top: 36% !important;
 
 
 
+
+.settori {
+    position:Relative;
+}
+.tendina {
+    list-style: none;
+    position:absolute;
+    bottom:-90px;
+    margin-left:-10px;
+    transition:all 100ms ease;
+    opacity:0;bottom: -178px;
+}
+.settori:hover>.tendina{
+    opacity:1 !important;
+}
+.tendel:hover{
+    cursor:pointer;
+    opacity:1;
+}
+
+.tendel {
+    line-height:15px;
+    font-weight: bold;
+    width:100%;
+    padding:6px;
+    height:20px;margin-top: 21px;
+    position:relative;
+    opacity:0.8;
+    transition:all 200ms ease;
+}
+
+.sectcont {
+    width:100%;
+    padding:2%
+}
+.refr{
+    background-color:#98cbd9
+}
+.industrial{
+    background-color:#447d93
+}
+.anti{
+    background-color:#233f44
+}
+.sport{
+    background-color:#166055
+}
+
+.intcont {
+    width:100%;
+}
+
+.sectpart {
+    display:inline-block;
+     vertical-align: middle;
+    position:relative;
+}
+.arroww{
+    width:9%;
+}
+.arroww:hover>.arrow-prodotti{
+    margin:0;
+    cursor:pointer;
+}
+.sectleft {
+    width:30%;
+}
+
+.sectright {
+    width:54%;
+   
+}
+
+.sectimg {
+    width:100%;
+    transition:all 1500ms ease;
+}
+.imgstart{
+    opacity:0;
+    margin-left:-20px;
+}
+.arrow-prodotti {
+        float: right;
+    width: 20px;
+    transition: all 200ms ease;
+    margin-right: 4px;
+    -webkit-filter: brightness(100) grayscale(1);
+    filter: brightness(100) grayscale(1);
+}
+			   
+			   
+			   .arrow-fade {
+    opacity:0.5;
+}
+.sfondo{
+   background-color: rgba(0,0,0,1);
+    padding: 0px 19px 23px 18px;
+    color: white !important;
+        bottom: -178px;
+    margin-left: -32px;
+}
+.tendbla{
+    margin-top: 21px;
+}

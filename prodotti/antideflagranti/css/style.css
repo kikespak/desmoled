@@ -1419,3 +1419,10 @@ top: 36% !important;
     box-sizing: border-box;
     margin-bottom:20px;
 }
+
+
+.sectcont {
+    width:100%;
+    height:50px;
+    color:red;
+}

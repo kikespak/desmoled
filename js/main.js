@@ -25,6 +25,7 @@ $(window).scroll(function () {
            console.log(scrollPercentage);
            if (scrollPercentage <= -71.3) {
                document.getElementById('blackheader').setAttribute('style','height:81px;border-bottom:0vw solid transparent;border-left:100vw solid #1a1a1a');
+               document.getElementById('tendina').style.color="black";
                if(done==0){document.getElementById('header').setAttribute('style', 'opacity:0;margin-top:-30px')}
                if (scrollPercentage <= -72.3) {done=1
                    if(done==1){ document.getElementById('header').setAttribute('style', 'opacity:1;margin-top:23px;background:transparent;    transform: translate(-195px,-22px);');}
@@ -32,7 +33,7 @@ $(window).scroll(function () {
                } else {done=0;
                    document.getElementById('header').style.position = "absolute";
                }
-           } else {
+           } else {document.getElementById('tendina').style.color="white";
               document.getElementById('header').setAttribute('style', '');
                document.getElementById('blackheader').setAttribute('style','height:0px;border-bottom:0vw solid transparent;border-left:100vw solid #1a1a1a');
            }

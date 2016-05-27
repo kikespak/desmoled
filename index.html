@@ -6,6 +6,17 @@
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
+		<script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBpT6kK9q7Iqt_ZF72ItDw38WNaYqVou_E",
+    authDomain: "project-8641496630749995774.firebaseapp.com",
+    databaseURL: "https://project-8641496630749995774.firebaseio.com",
+    storageBucket: "",
+  };
+  firebase.initializeApp(config);
+</script>
 		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
 		<script src="js/jquery.min.js"></script>
 		<script src="js/skel.min.js"></script>
@@ -24,9 +35,11 @@
 				<h1><a href="index.html"><img class="logo" src="images/desmologo02.png"/></a></h1>
 				<nav id="nav">
 					<ul>
-						<li class="elmnav"><a href="index.html"  style="color:white; border-bottom:3px solid white;font-weight:bold;">Home</a></li>
-						<li class="elmnav"><a href="noi.html">Noi</a></li>
-						<li class="elmnav"><a href="prodotti/index.html">Prodotti</a></li>
+					<li class="elmnav settori" style="margin-right:40px !important;"><a href="prodotti/index.html">SETTORI</a><div class="tendina" id="tendina"><div class="tendel">Antideflagranti</div><div class="tendel">Industriali</div><div class="tendel">Refrigerante</div><div class="tendel">Sport</div></div></li>
+					<li class="elmnav" style="margin-right:40px !important;"><a href="noi.html">NOI</a></li>
+						<li class="elmnav"><a href="index.html"  style="color:white; border-bottom:3px solid white;font-weight:bold;">HOME</a></li>
+						
+						
 					</ul>
 				</nav>
 			</header>
@@ -36,15 +49,22 @@
 				<div id="spacer"></div>
 			</section>
 			<section id="one" class="wrapper style1 align-center"><div class="container" id="main"><div class="row 200% align-center" id="total">
-                <section class="4u 0u$(small)"><img class="mission" src="images/blank.png"/></section>
-			<section class="4u 12u$(small)"><img id="mission" class="mission" src="images/mission.png"/></section>
-			                <section class="4u 0u$(small)"><img class="mission" src="images/blank.png"/></section>
-				<section class="4u 12u$(small)" id="made"><div class="infomage"><div class="infolayer" id="infl"></div><img  id="infm" style="width:100%;-webkit-filter:grayscale(1);filter:grayscale(1);transition:all 500ms ease;" src="images/madeinitaly.png"/></div></section><section class="8u 12u$(small)"  style="margin-top:50px;"><h1 style="float:left;font-weight:bold;font-size:40px">Made in Italy</h1><br><br><br><p style="color:black !important;text-align:justify;">DESMOLED Srl è un’azienda 100% Italiana, che progetta, produce e commercializza lampade a LED presso la propria sede di Casorezzo (MI). DESMOLED Srl non è importatore, né assemblatore di elementi costruiti da terzi, ma segue direttamente tutto il processo produttivo: dal montaggio dell’elettronica, alla realizzazione delle meccaniche, fino all’assemblaggio del prodotto finito. Partendo dal concetto di risparmio energetico. DESMOLED Srl realizza dispositivi d’illuminazione per interni ed esterni: lampade lineari, plafoniere, faretti, proiettori industriali e torri-faro. (ovviamente questo testo è modificabile e potrà essere ampliato).</p></section>
+			<section class="12u 12u$(small)" style="text-align:center;"></section>
+				<section class="4u 12u$(small)" id="made"><div class="infomage"><div class="infolayer" id="infl"></div><img  id="infm" style="width:100%;-webkit-filter:grayscale(1);filter:grayscale(1);transition:all 500ms ease;" src="images/madeinitaly.png"/></div></section><section class="8u 12u$(small)"  style="margin-top:50px;"><h1 style="float:left;font-weight:bold;font-size:40px">Made in Italy</h1><br><br><br><p style="color:black !important;text-align:justify;" id="min-firebase">DESMOLED Srl è un’azienda 100% Italiana, che progetta, produce e commercializza lampade a LED presso la propria sede di Casorezzo (MI). DESMOLED Srl non è importatore, né assemblatore di elementi costruiti da terzi, ma segue direttamente tutto il processo produttivo: dal montaggio dell’elettronica, alla realizzazione delle meccaniche, fino all’assemblaggio del prodotto finito. Partendo dal concetto di risparmio energetico. DESMOLED Srl realizza dispositivi d’illuminazione per interni ed esterni: lampade lineari, plafoniere, faretti, proiettori industriali e torri-faro. (ovviamente questo testo è modificabile e potrà essere ampliato).</p></section>
                <section class="12u 12u$(small)"> </section>
-                <section class="8u 12u$(small)"  style="margin-top:50px;" id="effi"><h1 style="float:right;font-weight:bold;font-size:40px">Efficienza</h1><br><br><br><p style="color:black !important;text-align:justify;"> DESMOLED ha come mission la realizzazione di lampade a LED con la migliore efficienza luminosa sul mercato, da intendersi come ottimizzazione del rapporto tra consumo e rendimento (lumen/watt); questo primato è riscontrabile in comparazione con le fonti di illuminazione tradizionali: fluorescenze, ioduri metallici, polveri di sodio, alogene, ecc., in cui il consumo dei nostri dispositivi risulta essere pari ad un terzo, un quarto ed a volte un quinto.</p></section><section class="4u 12u$(small)"><div class="infomage"><div class="infolayer" id="infl2"></div><div id="greenliquid" class="backgreen"></div><img  id="infm2" style="width:100%;-webkit-filter:grayscale(1);filter:grayscale(1);transition:all 500ms ease;" src="images/efficenza.png"/></div></section>
-                <section class="12u 12u$(small)"> </section>
-                <section class="4u 12u$(small)"><div class="infomage"><div class="infolayer" id="infl3"></div><img  id="infm3" style="width:100%;-webkit-filter:grayscale(1);filter:grayscale(1);transition:all 500ms ease;" src="images/convenienza.png"/></div></section><section class="8u 12u$(small)"  style="margin-top:50px;"><h1 style="float:left;font-weight:bold;font-size:40px">Convenienza</h1><br><br><br><p style="color:black !important;text-align:justify;">Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></section>
 			</div></div></section>
+			<div class="sectcont refr">
+               <div class="intcont"><br><div class="sectleft sectpart"><img src="images/refrigerante.png" class="sectimg imgstart"  id="ef-refr"/></div><div class="sectright sectpart"><div style="color:#4d4d4d !important;text-align:justify;"><h1 style="color:#4d4d4d !important;font-weight:bold;font-size:40px" id="refr-title-firebase">Refrigeranti</h1><p id="refr-firebase">Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ip</p></div></div><div class="sectpart arroww"><img src="images/arrow.png" class="arrow-prodotti"/><img src="images/arrow.png" class="arrow-prodotti arrow-fade"/></div>
+                </div></div>
+                <div class="sectcont industrial">
+               <div class="intcont"><br><div class="sectleft sectpart"><img src="images/ndustriale.png" class="sectimg imgstart" id="ef-indu"/></div><div class="sectright sectpart"><div style="color:#e6e6e6 !important;text-align:justify;"><h1 style="color:#e6e6e6 !important;font-weight:bold;font-size:40px" id="indu-title-firebase">Industriale</h1><p id="indu-firebase">Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ip</p></div></div><div class="sectpart arroww"><img src="images/arrow.png" class="arrow-prodotti"/><img src="images/arrow.png" class="arrow-prodotti arrow-fade"/></div>
+                </div></div>
+                <div class="sectcont anti">
+               <div class="intcont"><br><div class="sectleft sectpart"><img src="images/deflagrante.png" class="sectimg imgstart"  id="ef-defl"/></div><div class="sectright sectpart"><div style="color:#b3b3b3 !important;text-align:justify;"><h1 style="color:#b3b3b3 !important;font-weight:bold;font-size:40px" id="defl-title-firebase">Antideflagranti</h1><p id="defl-firebase">Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ip</p></div></div><div class="sectpart arroww"><img src="images/arrow.png" class="arrow-prodotti"/><img src="images/arrow.png" class="arrow-prodotti arrow-fade"/></div>
+                </div></div>
+                <div class="sectcont sport">
+               <div class="intcont"><br><div class="sectleft sectpart"><img src="images/sport.png" class="sectimg imgstart"  id="ef-spor"/></div><div class="sectright sectpart"><div style="color:#e6e6e6 !important;text-align:justify;"><h1 style="color:#e6e6e6 !important;font-weight:bold;font-size:40px" id="spor-title-firebase">Impianti sportivi</h1><p id="spor-firebase">Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ip</p></div></div><div class="sectpart arroww"><img src="images/arrow.png" class="arrow-prodotti"/><img src="images/arrow.png" class="arrow-prodotti arrow-fade"/></div>
+                </div></div>
 
 		<!-- Two -->
 			<section id="two" class="wrapper style2 align-center">
