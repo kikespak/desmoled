@@ -7,6 +7,78 @@
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
 		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+		<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBpT6kK9q7Iqt_ZF72ItDw38WNaYqVou_E",
+    authDomain: "project-8641496630749995774.firebaseapp.com",
+    databaseURL: "https://project-8641496630749995774.firebaseio.com",
+    storageBucket: "project-8641496630749995774.appspot.com",
+  };
+  firebase.initializeApp(config);
+    var q=firebase.database().ref('config')
+    var nx=function(f){console.log(f.key);console.log(f.val());
+                      window.myJson=f.val();
+                      updateAll()
+                      }
+    q.on('child_added',nx);
+    function updateAll(){
+        var count = 0;
+for (var k in myJson.sectdefl) {
+    if (myJson.sectdefl.hasOwnProperty(k)) {
+       ++count;
+    }
+}
+        for(var i=0;i<count.length;i++){
+            var s=document.createElement('section');
+            s.setAttribute('class','4u 12u$(small) fam');
+            s.setAttribute('id','fam'+(i+1));
+            s.setAttribute('onclick','myToggle(this.id)');
+            var d=document.createElement('div');
+            d.setAttribute('class','famiglia-section famsect-deflagranti');
+            var num='famiglia'+(i+1)+'sectdefl';
+            d.innerHTML=myJson.sectdefl.num.famigliatitle;
+            s.appendChild(d);
+            document.getElementById('target-family').appendChild(s);
+            var r=document.createElement('div');
+            r.setAttribute('class','row');
+            r.setAttribute('id','targetpdf'+(i+1));
+            r.setAttribute('style','margin:0px 10px -1px -1em');
+            var f=document.createElement('section');
+            f.setAttribute('class','12u 12u$(small) back-fam');
+            f.setAttribute('onclick="myToggle("fam'+(i+1)+'")');
+            f.innerHTML="Indietro";
+            r.appendChild(f);
+            document.getElementById('targetpdf').appendChild(r);
+                var countt = 0;
+for (var k in myJson.sectdefl.num) {
+    if (myJson.sectdefl.num.hasOwnProperty(k)) {
+       ++countt;
+    }
+}
+            for(var z=0;z<countt.length;z++){
+                var ss=document.createElement('section');
+                ss.setAttribute('class','3u 6u$(small)');
+                var dd=document.createElement('div');
+                dd.setAttribute('class','button-fam');
+                var numpdf="pdf"+(z+1)+"";
+                dd.innerHTML=myJson.sectdefl.num.numpdf.pdfname;
+                dd.setAttribute('href',myJson.sectdefl.num.numpdf.pdflink)
+                dd.setAttribute('target','_blank');
+                var im=document.createElement('img');
+                im.setAttribute('class','pdf-icon');
+                im.setAttribute('src','../../images/pdf.png');
+                dd.appendChild(im);
+                ss.appendChild(dd);
+                document.getElementById('targetpdf').appendChild(ss)
+                
+                <section class="3u 6u$(small)"><div class="button-fam">Codice<img class="pdf-icon" src="../../images/pdf.png"/></div></section>
+            }
+        }
+       
+        
+    }
+</script>
 		<script src="../../js/jquery.min.js"></script>
 		<script src="../../js/skel.min.js"></script>
 		<script src="../../js/skel-layers.min.js"></script>
@@ -35,11 +107,13 @@
 				<h2 style="color:white;font-weight:bold;">Illuminazione antideflagranti</h2>
 				<p></p>
 			</section>
-			<section id="one" class="wrapper style1 align-center"><div class="container" id="main"><div class="row 200% align-center">
+			<section id="one" class="wrapper style1 align-center"><div class="container" id="main"><div class="row 200% align-center" id="target-families">
              <section class="4u 12u$(small) fam" id="fam1" onclick="myToggle(this.id)"><div class="famiglia-section famsect-deflagranti">Famiglia 1</div></section>
              <section class="4u 12u$(small) fam" id="fam2" onclick="myToggle(this.id)"><div class="famiglia-section famsect-deflagranti">Famiglia 1</div></section>
              <section class="4u 12u$(small) fam" id="fam3" onclick="myToggle(this.id)"><div class="famiglia-section famsect-deflagranti">Famiglia 1</div></section>
 			</div></div>
+			<div id="targetpdf"></div>
+			
 			<section id="fam1-cont" onclick="myToggle('fam1')" class="12u 12u$(small) fam-cont hidden">
             <div class="row" style="    margin: 0px 10px -1px -1em;"><section class="12u 12u$(small) back-fam"  onclick="myToggle('fam2')">Indietro</section>
 			    <section class="3u 6u$(small)"><div class="button-fam">Codice<img class="pdf-icon" src="../../images/pdf.png"/></div></section>

@@ -13,9 +13,28 @@
     apiKey: "AIzaSyBpT6kK9q7Iqt_ZF72ItDw38WNaYqVou_E",
     authDomain: "project-8641496630749995774.firebaseapp.com",
     databaseURL: "https://project-8641496630749995774.firebaseio.com",
-    storageBucket: "",
+    storageBucket: "project-8641496630749995774.appspot.com",
   };
   firebase.initializeApp(config);
+    var q=firebase.database().ref('config')
+    var nx=function(f){console.log(f.key);console.log(f.val());
+                      window.myJson=f.val();
+                      updateAll()
+                      }
+    q.on('child_added',nx);
+    function updateAll(){
+        
+        document.getElementById('sottotitolo-firebase').innerHTML=myJson.sottotitolo;
+        document.getElementById('defl-title-firebase').innerHTML=myJson.defltitle;
+        document.getElementById('spor-title-firebase').innerHTML=myJson.sportitle;
+        document.getElementById('refr-title-firebase').innerHTML=myJson.refrtitle;
+        document.getElementById('indu-title-firebase').innerHTML=myJson.indutitle;
+        document.getElementById('defl-firebase').innerHTML=myJson.defl;
+        document.getElementById('spor-firebase').innerHTML=myJson.spor;
+        document.getElementById('refr-firebase').innerHTML=myJson.refr;
+        document.getElementById('indu-firebase').innerHTML=myJson.indu;
+    }
+    
 </script>
 		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
 		<script src="js/jquery.min.js"></script>
@@ -35,7 +54,7 @@
 				<h1><a href="index.html"><img class="logo" src="images/desmologo02.png"/></a></h1>
 				<nav id="nav">
 					<ul>
-					<li class="elmnav settori" style="margin-right:40px !important;"><a href="prodotti/index.html">SETTORI</a><div class="tendina" id="tendina"><div class="tendel">Antideflagranti</div><div class="tendel">Industriali</div><div class="tendel">Refrigerante</div><div class="tendel">Sport</div></div></li>
+                        <li class="elmnav settori" style="margin-right:40px !important;"><a>SETTORI</a><div class="tendina" id="tendina"><div class="tendel"><a href="prodotti/antideflagranti/index.html">Antideflagranti</a></div><div class="tendel"><a href="prodotti/industriale/index.html">Industriale</a></div><div class="tendel"><a href="prodotti/refrigerazione/index.html">Refrigerante</a></div><div class="tendel"><a href="prodotti/sport/index.html">Sport</a></div></div></li>
 					<li class="elmnav" style="margin-right:40px !important;"><a href="noi.html">NOI</a></li>
 						<li class="elmnav"><a href="index.html"  style="color:white; border-bottom:3px solid white;font-weight:bold;">HOME</a></li>
 						
@@ -45,7 +64,7 @@
 			</header>
 			<section id="banner">
 				<h2><a href="index.html"><img class="logo" src="images/desmologo06.png" style="height:120px"/></a></h2>
-				<p>Produzione di led di altà qualità a Milano.</p>
+				<p id="sottotitolo-firebase">Produzione di led di altà qualità a Milano.</p>
 				<div id="spacer"></div>
 			</section>
 			<section id="one" class="wrapper style1 align-center"><div class="container" id="main"><div class="row 200% align-center" id="total">
