@@ -63,17 +63,18 @@ for (var kk in myFam) {console.log('a4')
     console.log('a5')
                 var ss=document.createElement('section');
                 ss.setAttribute('class','3u 6u$(small)');
-                var dd=document.createElement('a');
-                dd.setAttribute('class','button-fam');
+                var ee=document.createElement('div');
+                ee.setAttribute('class','button-fam');
                 //var numpdf=myPdf;
-        console.log(myPdf)
-                dd.innerHTML=myPdf.pdfname;
+                ee.innerHTML=myPdf.pdfname;
+            var dd=document.createElement('a');
                dd.setAttribute('href',myPdf.pdflink)
                 dd.setAttribute('target','_blank');
                 var im=document.createElement('img');
                 im.setAttribute('class','pdf-icon');
                 im.setAttribute('src','../../images/pdf.png');
-                dd.appendChild(im);
+                dd.appendChild(ee);
+                ee.appendChild(im);
                 ss.appendChild(dd);console.log('a6')
                 r.appendChild(ss)}
             }
@@ -100,9 +101,11 @@ for (var kk in myFam) {console.log('a4')
 				<h1><a href="index.html"><img class="logo" src="../../images/desmologo02.png"/></a></h1>
 				<nav id="nav">
 					<ul>
-						<li class="elmnav"><a href="../../index.html">Home</a></li>
-						<li class="elmnav"><a href="../../noi.html">Noi</a></li>
-						<li class="elmnav"><a href="../index.html" style="color:white; border-bottom:3px solid white;font-weight:bold;">Prodotti</a></li>
+                        <li class="elmnav settori" style="margin-right:40px !important;"><a>SETTORI</a><div style="bottom: -120px;" class="tendina" id="tendina"><div class="tendel"><a href="../industriale/index.html">Industriale</a></div><div class="tendel"><a href="../refrigerazione/index.html">Refrigerante</a></div><div class="tendel"><a href="../sport/index.html">Sport</a></div></div></li>
+					<li class="elmnav" style="margin-right:40px !important;"><a href="../../noi.html">NOI</a></li>
+						<li class="elmnav"><a href="../../index.html"  style="color:white; border-bottom:3px solid white;font-weight:bold;">HOME</a></li>
+						
+						
 					</ul>
 				</nav>
 			</header>
