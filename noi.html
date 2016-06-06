@@ -1,11 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
+	<link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
+<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/favicon-194x194.png" sizes="194x194">
+<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/android-chrome-192x192.png" sizes="192x192">
+<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-TileImage" content="/mstile-144x144.png">
+<meta name="theme-color" content="#ffffff">
 		<meta charset="UTF-8">
 		<title>Desmoled S.R.L</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
+		<script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+		<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBpT6kK9q7Iqt_ZF72ItDw38WNaYqVou_E",
+    authDomain: "project-8641496630749995774.firebaseapp.com",
+    databaseURL: "https://project-8641496630749995774.firebaseio.com",
+    storageBucket: "project-8641496630749995774.appspot.com",
+  };
+  firebase.initializeApp(config);
+    var q=firebase.database().ref('config')
+    var nx=function(f){console.log(f.key);console.log(f.val());
+                      window.myJson=f.val();
+                      updateAll()
+                      }
+    q.on('child_added',nx);
+    function updateAll(){
+        
+        document.getElementById('title-firebase').innerHTML=myJson.noi.title;
+        document.getElementById('text-firebase').innerHTML=myJson.noi.text;
+        document.getElementById('efficienzatitle-firebase').innerHTML=myJson.noi.efficienzatitle;
+        document.getElementById('convenienzatitle-firebase').innerHTML=myJson.noi.convenienzatitle;
+        document.getElementById('efficienzatext-firebase').innerHTML=myJson.noi.efficienzatext;
+        document.getElementById('convenienzatext-firebase').innerHTML=myJson.noi.convenienzatext;
+        
+    }
+    
+</script>
 		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
 		<script src="js/jquery.min.js"></script>
 		<script src="js/skel.min.js"></script>
@@ -24,9 +71,11 @@
 				<h1><a href="index.html"><img class="logo" src="images/desmologo02.png"/></a></h1>
 				<nav id="nav">
 					<ul>
-						<li class="elmnav"><a href="index.html">Home</a></li>
-						<li class="elmnav"><a href="noi.html" style="color:white; border-bottom:3px solid white;font-weight:bold;">Noi</a></li>
-						<li class="elmnav"><a href="prodotti/index.html">Prodotti</a></li>
+                        <li class="elmnav settori" style="margin-right:40px !important;"><a>SETTORI</a><div class="tendina" id="tendina"><div class="tendel"><a href="prodotti/antideflagranti/index.html">Antideflagranti</a></div><div class="tendel"><a href="prodotti/industriale/index.html">Industriale</a></div><div class="tendel"><a href="prodotti/refrigerazione/index.html">Refrigerante</a></div><div class="tendel"><a href="prodotti/sport/index.html">Sport</a></div></div></li>
+					<li class="elmnav" style="margin-right:40px !important;"><a href="noi.html" style="color:white; border-bottom:3px solid white;font-weight:bold;">NOI</a></li>
+						<li class="elmnav"><a href="index.html">HOME</a></li>
+						
+						
 					</ul>
 				</nav>
 			</header>
@@ -36,38 +85,25 @@
 				<div id="spacer"></div>
 			</section>
 			<section id="one" class="wrapper style1 align-center"><div class="container" id="main"><div class="row 200% align-center">
-               <section class="3u 12u$(small)">a</section><section class="6u 12u$(small)" style="color:#4d4d4d;text-align:justify;margin-bottom:50px"><h2 style="color:#4d4d4d">Desmoled - Qualità e made in Italy</h2>
-                   La nostra sede di Casorezzo (MI) conta 10 dipendenti dalle eccellenti competenze e grande spirito d'iniziativa. Fin dalla sua nascita la scelta di Desmoled è stata di non rivolgersi a rivenditori, ma di produrre dalla A alla Z i propri prodotti facendo del Made in Italy la propria forza. Questo, unito alla ricerca della soluzione più efficente e conveniente per il cliente, ha permesso la creazione di prodotti di qualità impareggiabile.
+               <section class="3u 12u$(small)">a</section><section class="6u 12u$(small)" style="color:#4d4d4d;text-align:justify;margin-bottom:50px"><h2 style="color:#4d4d4d" id="title-firebase">Desmoled - Qualità e made in Italy</h2>
+                  <p id="text-firebase">La nostra sede di Casorezzo (MI) conta 10 dipendenti dalle eccellenti competenze e grande spirito d'iniziativa. Fin dalla sua nascita la scelta di Desmoled è stata di non rivolgersi a rivenditori, ma di produrre dalla A alla Z i propri prodotti facendo del Made in Italy la propria forza. Questo, unito alla ricerca della soluzione più efficente e conveniente per il cliente, ha permesso la creazione di prodotti di qualità impareggiabile.</p> 
                </section>
                <section class="3u 12u$(small)">a</section>
-               <section class="12u 12u$(small)" style="height:2px;background-color:#fafafa;margin-bottom:50px;    width: 106%;">
-               </section>
-               <section class="12u 12u$(small)" style="color:#4d4d4d;text-align:justify;margin-bottom:50px;text-align:center"><h2 style="color:#4d4d4d">Le nostre qualità</h2>
+               <img src="images/noi1.jpg" style="width: 108%;
+    margin: -1%;
+    padding: 0;"/>
+               <section class="12u 12u$(small)" style="color:#4d4d4d;text-align:justify;margin-bottom:50px;text-align:center"><h2 style="color:#4d4d4d"></h2>
                   
                </section><br>
-                <section class="8u 12u$(small)"  style="margin-top:50px;" id="effi"><h1 style="float:right;font-weight:bold;font-size:40px">Efficienza</h1><br><br><br><p style="color:black !important;text-align:justify;"> DESMOLED ha come mission la realizzazione di lampade a LED con la migliore efficienza luminosa sul mercato, da intendersi come ottimizzazione del rapporto tra consumo e rendimento (lumen/watt); questo primato è riscontrabile in comparazione con le fonti di illuminazione tradizionali: fluorescenze, ioduri metallici, polveri di sodio, alogene, ecc., in cui il consumo dei nostri dispositivi risulta essere pari ad un terzo, un quarto ed a volte un quinto.</p></section><section class="4u 12u$(small)"><div class="infomage"><div class="infolayer" id="infl2"></div><div id="greenliquid" class="backgreen"></div><img  id="infm2" style="width:100%;-webkit-filter:grayscale(1);filter:grayscale(1);transition:all 500ms ease;" src="images/efficenza.png"/></div></section>
+                <section class="8u 12u$(small)"  style="margin-top:50px;" id="effi"><h1 style="float:right;font-weight:bold;font-size:40px" id="efficienzatitle-firebase">Efficienza</h1><br><br><br><p style="color:black !important;text-align:justify;" id="efficienzatext-firebase"> DESMOLED ha come mission la realizzazione di lampade a LED con la migliore efficienza luminosa sul mercato, da intendersi come ottimizzazione del rapporto tra consumo e rendimento (lumen/watt); questo primato è riscontrabile in comparazione con le fonti di illuminazione tradizionali: fluorescenze, ioduri metallici, polveri di sodio, alogene, ecc., in cui il consumo dei nostri dispositivi risulta essere pari ad un terzo, un quarto ed a volte un quinto.</p></section><section class="4u 12u$(small)"><div class="infomage"><div id="greenliquid" class="backgreen finalize"></div><img  id="infm2" style="width:100%;-webkit-filter:grayscale(1);filter:grayscale(1);transition:all 500ms ease;" src="images/efficenza.png"/></div></section>
+                <img src="images/noi-3.jpg" style="width: 108%;
+    margin: -1%;
+    padding: 0;"/>
                 <section class="12u 12u$(small)"> </section>
-                <section class="4u 12u$(small)"><div class="infomage"><div class="infolayer" id="infl3"></div><img  id="infm3" style="width:100%;-webkit-filter:grayscale(1);filter:grayscale(1);transition:all 500ms ease;" src="images/convenienza.png"/></div></section><section class="8u 12u$(small)"  style="margin-top:50px;"><h1 style="float:left;font-weight:bold;font-size:40px">Convenienza</h1><br><br><br><p style="color:black !important;text-align:justify;">Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></section>
+                <section class="4u 12u$(small)"><div class="infomage"><img  id="infm3" style="width:100%;-webkit-filter:grayscale(0);filter:grayscale(0);transition:all 500ms ease;" src="images/convenienza.png"/></div></section><section class="8u 12u$(small)"  style="margin-top:50px;"><h1 style="float:left;font-weight:bold;font-size:40px" id="convenienzatitle-firebase">Convenienza</h1><br><br><br><p style="color:black !important;text-align:justify;" id="convenienzatext-firebase">Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></section>
 			                <section class="12u 12u$(small)">
 				</section>
 			</div></div></section>
-
-		<!-- Two -->
-			<section id="two" class="wrapper style2 align-center">
-				<div class="container">
-					<header>
-						<h2 style="color:#222;font-weight:bold">Scopri i nostri prodotti</h2>
-						<p  style="color:#444;"></p>
-					</header>
-					<div class="row">
-						<section class="feature 6u 12u$(small)">
-						</section>
-						<section class="feature 12u$ 12u$(small)">
-							
-						</section>
-					</div>
-				</div>
-			</section>
 			<footer id="footer">
 				<div class="container">
 					<ul class="copyright">

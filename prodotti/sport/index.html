@@ -6,6 +6,57 @@
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
+		<style>
+            .wrapper.style1 {
+    background-color: #fff;
+    color: #ffffff;
+}
+            .button-fam{
+                display:inline-block;
+                position:Relative;
+                background-color:#dedede;
+            }
+		    .button-fam:before {
+    left: auto;
+    right: 10px;
+    z-index: 2;
+}
+.button-fam:before {
+    position: absolute;
+    height: 100%;
+    left: 0;
+    top: 0;
+    line-height: 3;
+    font-size: 140%;
+    width: 60px;}
+                               .button-fam:hover:after {
+    width: 40%;
+}
+.button-fam:after {
+        width: 33%;
+    height: 147%;
+    background: rgba(255,255,255,0.3);
+    z-index: 1;
+    right: 0;
+    top: 0;
+    margin: -5px 0 0 -5px;
+    -webkit-transform-origin: 0 0;
+    -webkit-transform: rotate(-15deg);
+    -moz-transform-origin: 0 0;
+    -moz-transform: rotate(-15deg);
+    -ms-transform-origin: 0 0;
+    -ms-transform: rotate(-15deg);
+    transform-origin: 0 0;
+    transform: rotate(-15deg);
+}
+.button-fam:after {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;}
+		</style>
 		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
 		<script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
 		<script>
@@ -62,7 +113,7 @@ for (var kk in myFam) {console.log('a4')
         if(myPdf){
     console.log('a5')
                 var ss=document.createElement('section');
-                ss.setAttribute('class','3u 6u$(small)');
+                ss.setAttribute('class','4u 6u$(small)');
                 
             var ee=document.createElement('div');
                 ee.setAttribute('class','button-fam');
@@ -99,12 +150,12 @@ for (var kk in myFam) {console.log('a4')
 	</head>
 	<body class="landing">
 			<header id="header">
-				<h1><a href="index.html"><img class="logo" src="../../images/desmologo02.png"/></a></h1>
+				<h1><a href="../../index.html"><img class="logo" src="../../images/desmologo02.png"/></a></h1>
 				<nav id="nav">
 					<ul>
-                        <li class="elmnav settori" style="margin-right:40px !important;"><a>SETTORI</a><div style="bottom: -120px;" class="tendina" id="tendina"><div class="tendel"><a href="../antideflagranti/index.html">Antideflagranti</a></div><div class="tendel"><a href="../industriale/index.html">Industriale</a></div><div class="tendel"><a href="../refrigerazione/index.html">Refrigerante</a></div></div></li>
+                        <li class="elmnav settori" style="margin-right:40px !important;"><a  style="color:white; border-bottom:3px solid white;font-weight:bold;">SETTORI</a><div style="bottom: -120px;" class="tendina" id="tendina"><div class="tendel"><a href="../antideflagranti/index.html">Antideflagranti</a></div><div class="tendel"><a href="../industriale/index.html">Industriale</a></div><div class="tendel"><a href="../refrigerazione/index.html">Refrigerante</a></div></div></li>
 					<li class="elmnav" style="margin-right:40px !important;"><a href="../../noi.html">NOI</a></li>
-						<li class="elmnav"><a href="../../index.html"  style="color:white; border-bottom:3px solid white;font-weight:bold;">HOME</a></li>
+						<li class="elmnav"><a href="../../index.html">HOME</a></li>
 						
 						
 					</ul>
@@ -114,7 +165,7 @@ for (var kk in myFam) {console.log('a4')
 				<h2 style="color:white;font-weight:bold;">Illuminazione impianti sportivi</h2>
 				<p></p>
 			</section>
-			<section id="one" class="wrapper style1 align-center"><div class="container" id="main"><div class="row 200% align-center" id="target-family">
+			<section id="one" class="wrapper style1 align-center" style="min-height:500px;background-color:#fff"><div class="container" id="main"><div class="row 200% align-center" id="target-family">
 			</div></div>
 			<div id="targetpdf"></div>
 			</section>
